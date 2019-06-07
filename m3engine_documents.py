@@ -4,8 +4,8 @@ import requests
 
 app = Flask(__name__)
 
-docapi = "https://127.0.0.1" #This will change
-
+#docapi = "https://127.0.0.1" #This will change
+docapi = "https://doco.cfapps.io" #This will change
 
 @app.route('/api/v1/document/add',methods=['POST'])
 def add():
