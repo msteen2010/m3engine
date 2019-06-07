@@ -4,8 +4,15 @@ import requests
 
 app = Flask(__name__)
 
-#docapi = "https://127.0.0.1" #This will change
-docapi = "https://doco.cfapps.io" #This will change
+docapi = ""
+
+if 'VCAP_SERVICES' in os.environ:
+    docapi = "https://doco.cfapps.io"
+else:
+    docapi = "http://127.0.0.1:5000"
+
+print("handlerapi_server: %s" % docapi)
+
 
 @app.route('/api/v1/document/add',methods=['POST'])
 def add():
